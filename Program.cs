@@ -9,12 +9,10 @@ builder.Services.Configure<TodoDatabaseSettings>(
 );
 builder.Services.AddSingleton<TodosService>();
 
-builder.Services.AddControllers();
-
-// builder.Services.AddControllers()
-//     .AddJsonOptions(
-//         options => options.JsonSerializerOptions.PropertyNamingPolicy = null);
-// </snippet_AddControllers>
+// https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mongo-app?view=aspnetcore-6.0&tabs=visual-studio-code#configure-json-serialization-options
+builder.Services.AddControllers()
+    .AddJsonOptions(
+        options => options.JsonSerializerOptions.PropertyNamingPolicy = null);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

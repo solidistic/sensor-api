@@ -38,4 +38,7 @@ public class TodosController : ControllerBase
 
         return NoContent();
     }
+
+    [HttpGet("testeri")]
+    public string Get(string m) => "Moi!" + m;
 }
